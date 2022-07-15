@@ -39,7 +39,7 @@ function List({ data, editHandler, deleteHandler }) {
     setSearchInput(searchValue)
     if (searchInput !== '') {
         const filteredData = data.filter((item) => {
-            return Object.values(item.name).join('').toLowerCase().includes(searchInput.toLowerCase())
+            return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase())
         })
         setFilteredResults(filteredData)
     }
@@ -81,7 +81,7 @@ function List({ data, editHandler, deleteHandler }) {
     <>
     <div className="form-group mt-3">
       <label htmlFor="">Search Items</label>
-      <input className="form-control" onChange={(e) => searchItems(e.target.value)} placeholder="search by Name"></input>
+      <input className="form-control" onChange={(e) => searchItems(e.target.value)} placeholder="Search item data"></input>
     </div>
     <div className="form-group mt-3">
         <label htmlFor="">Sort Items</label>
